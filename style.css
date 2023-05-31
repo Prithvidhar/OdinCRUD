@@ -1,0 +1,107 @@
+html{
+    height: 100%;
+}
+body{
+    display:grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 0.5fr 5fr;
+    background-color: blanchedalmond;
+    height: 100%;
+}
+.header{
+    grid-column: 1/3;
+    grid-row:1/2;
+    display:flex;
+    justify-content: center;
+    font-family: 'EB Garamond', serif;
+    background-color: brown;
+    color: antiquewhite;
+}
+.sidebar div{
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+.sidebar button:first-of-type
+{
+    
+    border-radius:15px;
+    background-color: aliceblue;
+    font-family: 'Cormorant Garamond', serif;
+    color:brown;
+    font-size:x-large;
+    margin:5px;
+    
+
+    
+}
+.sidebar button:first-of-type:hover
+{
+    background-color: rgb(142, 146, 150);
+    color:black;
+}
+.sidebar button:first-of-type:active
+{
+    box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+    transform: translateY(4px);
+}
+
+
+.sidebar input,.sidebar select{
+    border-radius: 15px;
+    background-color: azure;
+}
+.sidebar form{
+    visibility:hidden;
+}
+.sidebar
+{
+    grid-column: 1/2;
+    grid-row:2/3;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 10px;
+    font-family:  'Cormorant Garamond', serif;
+    padding: 15px;
+    background-color: whitesmoke;
+    color:brown;
+    font-size: x-large;
+}
+.library
+{
+    background-image: url(inaki-del-olmo-NIJuEQw0RKg-unsplash.jpg);
+    grid-row:2/3;
+    grid-column: 2/3;
+    background-size:contain;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(auto-fill,200px);
+    gap: 10px;
+    padding: 10px;
+    z-index: 0;
+}
+.card
+{
+    background-color: white;
+    border-left: solid brown 5px;
+    border-radius: 10px;
+    height: auto;
+    width: auto;
+    padding: 15px;
+    z-index: 1;
+    font-family: 'Cormorant Garamond', serif;
+    display: flex;
+    gap:5px;
+    flex-direction: column;
+    box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+}
+.card > div > button{
+    border-radius:15px;
+    background-color: aliceblue;
+    font-family: 'Cormorant Garamond', serif;
+    color:brown;
+    font-size:x-large;
+    margin:5px;
+}

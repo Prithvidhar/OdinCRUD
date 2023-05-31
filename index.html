@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital@1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=EB+Garamond:ital@1&display=swap" rel="stylesheet">
+    <title>The Library Database</title>
+</head>
+<body>
+    <div class="header">
+        <h1>The Library Database</h1>
+    </div>
+    <div class="sidebar">
+        <button id="new">Add Book</button>
+        <form action="" method="GET">
+            <div>
+                <label for="title">Book Title:</label>
+                <input type="text" name="title" id="title" placeholder="Title of Book...">
+            </div>
+            <div>
+                <label for="author">Book Author:</label>
+                <input type="text" name="author" placeholder="Author of Book..." id="author">
+            </div>
+            <div>
+                <label for="pages">Number of Pages:</label>
+                <input type="number" name="pages" placeholder="Ex: 200" id="pages">
+            </div>
+            <div>
+                <label for="read">Did you read the book?:</label>
+                <select name="read" id="read">
+                    <option value="true" selected>Yes</option>
+                    <option value="false">No</option>
+                </select>
+            </div>
+            <button type="submit">Add book to selection</button>
+        </form>
+    </div>
+    <div class="library">
+        
+    </div>
+
+</body>
+<script src="library.js"></script>
+</html>
