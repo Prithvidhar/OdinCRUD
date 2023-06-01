@@ -11,7 +11,7 @@ This is a webpage where users can visualize descriptions of books in CSS card.
 - Storing large numbers of book cards.
 ## Future Plans:
 - Adding a Database system to store even more books
-- Fetching Amazing book list from book name provided
+- Fetching Amazon book list using book name provided
 - Login system
 - General webpage design improvements
 ## Tech stack used:
