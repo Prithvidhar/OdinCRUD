@@ -1,4 +1,4 @@
-# A library book visualizer
+# A library visualizer
 This is a webpage where users can visualize descriptions of books in CSS card.
 ## Instructions
 1. Click on the "Add Book" button.
