@@ -39,13 +39,25 @@ function addBookToLibrary(e) {
   myLibrary.push(newBook);
   //making the card element
   var newCard = document.createElement("div");
-  newCard.className="card";
+  
   newCard.setAttribute("id",myLibrary.indexOf(newBook));
-  newCard.innerHTML = `<h2>${titleinput.value}</h2> <p>by ${authorinput.value}. It has ${pagesinput.value} page(s)</p>
+  // console.log("the read value is ", readinput.value)
+  if(readinput.value === "true")
+  {
+    newCard.className="card";
+    newCard.innerHTML = `<h2>${titleinput.value} <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M480.118-330Q551-330 600.5-379.618q49.5-49.617 49.5-120.5Q650-571 600.382-620.5q-49.617-49.5-120.5-49.5Q409-670 359.5-620.382q-49.5 49.617-49.5 120.5Q310-429 359.618-379.5q49.617 49.5 120.5 49.5Zm-.353-58Q433-388 400.5-420.735q-32.5-32.736-32.5-79.5Q368-547 400.735-579.5q32.736-32.5 79.5-32.5Q527-612 559.5-579.265q32.5 32.736 32.5 79.5Q592-453 559.265-420.5q-32.736 32.5-79.5 32.5ZM480-200q-146 0-264-83T40-500q58-134 176-217t264-83q146 0 264 83t176 217q-58 134-176 217t-264 83Z"/></svg></h2> <p>by ${authorinput.value}. It has ${pagesinput.value} page(s)</p>
                         <div class="delete"><button id="${myLibrary.indexOf(newBook)}">Remove Book</button></div>`;
+  }
+  else
+  {
+    newCard.className="cardnoread";
+    newCard.innerHTML = `<h2>${titleinput.value} <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M480.118-330Q551-330 600.5-379.618q49.5-49.617 49.5-120.5Q650-571 600.382-620.5q-49.617-49.5-120.5-49.5Q409-670 359.5-620.382q-49.5 49.617-49.5 120.5Q310-429 359.618-379.5q49.617 49.5 120.5 49.5Zm-.353-58Q433-388 400.5-420.735q-32.5-32.736-32.5-79.5Q368-547 400.735-579.5q32.736-32.5 79.5-32.5Q527-612 559.5-579.265q32.5 32.736 32.5 79.5Q592-453 559.265-420.5q-32.736 32.5-79.5 32.5ZM480-200q-146 0-264-83T40-500q58-134 176-217t264-83q146 0 264 83t176 217q-58 134-176 217t-264 83Z"/></svg></h2> <p>by ${authorinput.value}. It has ${pagesinput.value} page(s)</p>
+                        <div class="delete"><button id="${myLibrary.indexOf(newBook)}">Remove Book</button></div>`;
+  }
+  
  
   form.style.visibility = 'hidden';
-  console.log(newCard);
+  // console.log(newCard);
   parent.appendChild(newCard);
   var removal = document.querySelectorAll(".delete button");
     // console.log(removal);
@@ -54,12 +66,32 @@ function addBookToLibrary(e) {
     {   
         // console.log(event);
         var toremove = document.getElementById((event.target.id).toString());
-        console.log(toremove);
+        // console.log(toremove);
         toremove.remove();
         delete myLibrary[parseInt(event.target.id)];
+        // console.log(myLibrary);
 
 
     });
+    })
+    //toggle for read or no read
+    var toggle = document.querySelectorAll("svg");
+    toggle.forEach(nodey =>{
+      nodey.addEventListener("click",(event)=>
+      {
+        var tochange=document.getElementById((event.target.parentElement.parentElement.parentElement.id).toString());
+        // console.log('element needed is',event.target.parentElement.parentElement.parentElement);
+        // console.log('the id is', parseInt(event.target.parentElement.parentElement.id));
+        if(myLibrary[parseInt(event.target.parentElement.parentElement.parentElement.id)].read)
+        {
+          tochange.classList = "cardnoread";
+          myLibrary[parseInt(event.target.parentElement.parentElement.parentElement.id)].read = false;
+        }
+        else{
+          tochange.classList = "card";
+          myLibrary[parseInt(event.target.parentElement.parentElement.parentElement.id)].read = true;
+        }
+      })
     })
     
   
